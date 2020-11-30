@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel='stylesheet' href='../styles/questions.css'>
+  <title>Document</title>
+</head>
+<body>
+  <div id='container'>
+    <div id='delete-question'>
+      <h1>MANAGE QUESTIONS</h1>
+      <div id='manage-questions'></div>
+    </div>
+    <div id='add-question'>
+      <h1>CREATE A NEW QUESTION</h1>
+      <form id='new-question'>
+        <input id='question-input' type='text' name='question' placeholder='Type your question here'>
+        <h3>Answers</h3>
+        <div>
+          <label for='answer1'>#1</label>
+          <input type='text' class='answers' id='answer1' placeholder='Type your answer here'>
+          <input type='radio' name='correct-answer' value='1'>
+          <hr>
+        </div>
+        <div>
+          <label for='answer2'>#2</label>
+          <input type='text' class='answers' id='answer2' placeholder='Type your answer here'>
+          <input type='radio' name='correct-answer' value='2'>
+          <hr>
+        </div>
+        <div>
+          <label for='answer3'>#3</label>
+          <input type='text' class='answers' id='asnwer3' placeholder='Type your answer here'>
+          <input type='radio' name='correct-answer' value='3'>
+          <hr>
+        </div>
+        <div>
+          <label for='answer4'>#4</label>
+          <input type='text' class='answers' id='answer4' placeholder='Type your answer here'>
+          <input type='radio' name='correct-answer' value='4'>
+        </div>
+        <button type='submit' id='submit'>SUBMIT</button>
+        <a href='/game'>Go back to the game</a>
+      </form>
+    </div>
+  </div>
+
+  <script src='../js/handlebars-v4.7.6.js'></script>
+  <script id='questions-template' type='text/x-handlebars-template'>
+    {{#each this}}
+    <div class='question'>
+      <p>{{this.question}}</p>
+      <button class='delete' data-id='{{this.id}}'>Delete</button>
+    </div>
+    {{/each}}
+  </script>
+  <script src='../js/questions.js'></script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel='stylesheet' href='../styles/game.css'>
+  <title>Document</title>
+</head>
+<body>
+  <div class='game-container'>
+    <h1 id='score'>SCORE: 0</h1>
+    <div id='question-box'>
+      <h2>Question?</h2>
+      <div class='options'>
+        <div class='option-A'>Answer A</div>
+        <div class='option-B'>Answer B</div>
+        <div class='option-C'>Answer C</div>
+        <div class='option-D'>Answer D</div>
+      </div>
+    </div>
+    <a href='/questions'>Manage Questions</a>
+  </div>
+
+  <script src='../js/handlebars-v4.7.6.js'></script>
+  <script id='game-template' type='text/x-handlebars-template'>
+    <h2 id='question'>{{question}}</h2>
+      <div class='options'>
+        {{#each answers}}
+        <div class='answer' data-isCorrect='{{this.is_correct}}'>{{this.answer}}</div>
+        {{/each}}
+      </div>
+  </script>
+  <script src='../js/game.js'></script>
+</body>
+</html>
